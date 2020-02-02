@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/escena1_bosque.unity
+- path: Assets/Scene Prueba.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4848538660845954120}
   - component: {fileID: 4848538660845954121}
   - component: {fileID: 5727815019088433491}
-  - component: {fileID: 5727815019088433492}
   m_Layer: 0
   m_Name: Berenjeno quieto 1
   m_TagString: Player
@@ -141,24 +140,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5727815019088433492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4848538660845954228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f07e00cf485a14814a56a6ace7e92a6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxVelocidad: 6
-  capaGround:
-    serializedVersion: 2
-    m_Bits: 256
-  checkGround: {fileID: 5727815019842178479}
-  jumpPower: 8
 --- !u!1 &5727815019842178476
 GameObject:
   m_ObjectHideFlags: 0
