@@ -13,5 +13,9 @@ public class CambiarEscena : MonoBehaviour
         {
             SceneManager.LoadScene (Scene);
         }
+        if (other.tag == "Finish")
+        {
+            SceneManager.LoadScene (Scene);
+        }
     }
 }

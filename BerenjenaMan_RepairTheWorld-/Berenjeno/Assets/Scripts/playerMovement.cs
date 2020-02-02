@@ -21,7 +21,6 @@ public class playerMovement : MonoBehaviour
     public string Scene;
     bool voltearBerenjeno = true;
     SpriteRenderer berenjenoRender;
-    public GameObject SonidoSalto;
     // Start is called before the first frame update
     void Start()
     {
@@ -101,8 +100,8 @@ public class playerMovement : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Instantiate(bulletPrefab, bulletSpawner.position, bulletSpawner.rotation);
-        } 
-    } 
+        }
+    }
     IEnumerator Esperar ()
     {
         Debug.Log("estoy esperando 3 segundos");
