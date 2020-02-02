@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class playerMovement : MonoBehaviour
 {
     Rigidbody2D berenjenoRB;
     public float maxVelocidad;
     Animator berenjenoAnim;
     // Voltear EL Berenjeno
-
     bool die = false;
     float counter = 0f;
     bool puedoMover = true;
@@ -21,9 +19,9 @@ public class playerMovement : MonoBehaviour
     public Transform bulletSpawner;
     public GameObject bulletPrefab;
     public string Scene;
-
     bool voltearBerenjeno = true;
     SpriteRenderer berenjenoRender;
+    public GameObject SonidoSalto;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +29,6 @@ public class playerMovement : MonoBehaviour
         berenjenoRender = GetComponent<SpriteRenderer> ();
         berenjenoAnim = GetComponent<Animator> ();
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -39,7 +36,6 @@ public class playerMovement : MonoBehaviour
         {
             bool puedoMover = true;
             PlayerShooting();
-
             /* Debug.Log(puedoMover);
             Debug.Log(enSuelo);
             Debug.Log(Input.GetAxis("Jump"));*/
@@ -52,7 +48,6 @@ public class playerMovement : MonoBehaviour
             }
             enSuelo = Physics2D.OverlapCircle (checkGround.position, checkRadioGround, capaGround);
             berenjenoAnim.SetBool("is_in_ground", enSuelo);
-
             float movemment = Input.GetAxis ("Horizontal");
             if (puedoMover)
             {
@@ -78,7 +73,6 @@ public class playerMovement : MonoBehaviour
         }
         else
             {
-
                 counter++;
                 if (counter == 1f)
                 {
@@ -88,25 +82,20 @@ public class playerMovement : MonoBehaviour
                 {
                     Destroy(this.gameObject);
                     //cambio de escena
-
-                    SceneManager.LoadScene("MenuPrincipal");
+                    SceneManager.LoadScene(Scene);
                 }
                 StartCoroutine ("Esperar");
-
             }
     }
-
     void Voltear ()
     {
         voltearBerenjeno = !voltearBerenjeno;
         transform.Rotate(0f,180f,0f);
     }
-
     public void togglePuedeMover()
     {
         puedoMover = !puedoMover;
     }
-
     public void PlayerShooting()
     {
         if (Input.GetButtonDown("Fire1"))
@@ -114,20 +103,22 @@ public class playerMovement : MonoBehaviour
             Instantiate(bulletPrefab, bulletSpawner.position, bulletSpawner.rotation);
         } 
     } 
-
     IEnumerator Esperar ()
     {
         Debug.Log("estoy esperando 3 segundos");
         yield return new WaitForSeconds(3);
     }
-
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Limits")
         {
-            berenjenoAnim.SetBool("is_died", enSuelo);
+            berenjenoAnim.SetBool("is_died", true);
             die = true;
-
+        }
+        if (other.gameObject.tag == "Enemy")
+        {
+            berenjenoAnim.SetBool("is_died", true);
+            die = true;
         }
     }
 }
