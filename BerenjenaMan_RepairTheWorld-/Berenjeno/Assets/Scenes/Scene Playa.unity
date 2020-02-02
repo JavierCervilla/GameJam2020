@@ -1307,6 +1307,7 @@ MonoBehaviour:
   bulletSpawner: {fileID: 1467875352}
   bulletPrefab: {fileID: 265487560118300909, guid: 6ef3ff41a6cdf432cac0231fa1bbf57a,
     type: 3}
+  Scene: Scene Playa
 --- !u!1 &1719135870
 GameObject:
   m_ObjectHideFlags: 0

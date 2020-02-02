@@ -20,6 +20,7 @@ public class playerMovement : MonoBehaviour
     public float jumpPower;
     public Transform bulletSpawner;
     public GameObject bulletPrefab;
+    public string Scene;
 
     bool voltearBerenjeno = true;
     SpriteRenderer berenjenoRender;
@@ -87,7 +88,8 @@ public class playerMovement : MonoBehaviour
                 {
                     Destroy(this.gameObject);
                     //cambio de escena
-                    SceneManager.LoadScene("Scene Prueba");
+
+                    SceneManager.LoadScene(Scene);
                 }
                 StartCoroutine ("Esperar");
 
@@ -125,6 +127,7 @@ public class playerMovement : MonoBehaviour
         {
             berenjenoAnim.SetBool("is_died", enSuelo);
             die = true;
+
         }
     }
 }

@@ -1301,12 +1301,13 @@ MonoBehaviour:
   maxVelocidad: 8
   capaGround:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
   checkGround: {fileID: 489782280}
-  jumpPower: 5
+  jumpPower: 6
   bulletSpawner: {fileID: 1467875352}
-  bulletPrefab: {fileID: 265487560118300909, guid: 6ef3ff41a6cdf432cac0231fa1bbf57a,
+  bulletPrefab: {fileID: 4394168330416486460, guid: 3f3cd4a70788544a99288e1890e13a35,
     type: 3}
+  Scene: Scena Bosque
 --- !u!1 &1719135870
 GameObject:
   m_ObjectHideFlags: 0
