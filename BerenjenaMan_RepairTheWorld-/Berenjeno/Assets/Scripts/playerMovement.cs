@@ -89,7 +89,7 @@ public class playerMovement : MonoBehaviour
                     Destroy(this.gameObject);
                     //cambio de escena
 
-                    SceneManager.LoadScene(Scene);
+                    SceneManager.LoadScene("MenuPrincipal");
                 }
                 StartCoroutine ("Esperar");
 
